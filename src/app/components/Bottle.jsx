@@ -1,4 +1,3 @@
-import { useState } from "react";
 import "../../../public/css/bottle.css";
 import BottleWaterLevel from "./BottleWaterLevel";
 

@@ -5,7 +5,8 @@ import ExtraMenu from "@/app/components/ExtraMenu";
 import Bottle from "@/app/components/Bottle";
 import FluidTargetForm from "@/app/components/FluidTargetForm";
 
-export default function DashboardClient() {
+const DashboardClient = ({ user_id }) => {
+  // console.log("userID: " + user_id);
   const defaultFluidTarget = 2500; // ml
   const [fluidTarget, setFluidTarget] = useState(defaultFluidTarget);
   const [fluidLeft, setFluidLeft] = useState(defaultFluidTarget);
@@ -58,3 +59,5 @@ export default function DashboardClient() {
     </>
   );
 }
+
+export default DashboardClient;

@@ -12,5 +12,5 @@ export default async function Home() {
     redirect("/login");
   }
 
-  return <DashboardClient />;
+  return <DashboardClient user_id={session.session.userId}/>;
 }

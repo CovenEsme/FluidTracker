@@ -5,8 +5,9 @@ import ExtraMenu from "@/app/components/ExtraMenu";
 import Bottle from "@/app/components/Bottle";
 import FluidTargetForm from "@/app/components/FluidTargetForm";
 
-const DashboardClient = ({ user_id }) => {
-  // console.log("userID: " + user_id);
+const DashboardClient = ({ user_id, patient_id }) => {
+  console.log(`userID: ${user_id}; patientId: ${patient_id}`);
+
   const defaultFluidTarget = 2500; // ml
   const [fluidTarget, setFluidTarget] = useState(defaultFluidTarget);
   const [fluidLeft, setFluidLeft] = useState(defaultFluidTarget);

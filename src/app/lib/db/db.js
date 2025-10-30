@@ -1,5 +1,5 @@
 import mysql from "mysql2/promise";
-import connection from "./connection";
+import connection from "../connection";
 
 const fetchUser = async (user_id) => {
   try {
@@ -7,7 +7,7 @@ const fetchUser = async (user_id) => {
     const [rows] = await connection.execute(query, [user_id]);
     return rows;
   } catch (error) {
-    console.error("Database Error:", error);
+    console.error("Database Error: ", error);
     throw new Error("Failed to fetch data.");
   }
 };

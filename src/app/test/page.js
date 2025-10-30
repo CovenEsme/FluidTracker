@@ -7,7 +7,7 @@ import {
   getDrinksForDate,
   finishOpenDrink,
   getTypicalProgress,
-} from "../lib/db";
+} from "../lib/db/db";
 
 const TestPage = async () => {
   const result = await fetchUser(1);

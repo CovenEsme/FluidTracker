@@ -177,7 +177,7 @@ CREATE TABLE account (
         timeEnded INT NULL,
         note VARCHAR(1023) NULL,
         CONSTRAINT fk_fluidEntries_patients FOREIGN KEY (patientId) REFERENCES patients(patientId),
-        CONSTRAINT fk_fluidEntries_users FOREIGN KEY (userId) REFERENCES users(userId)
+        CONSTRAINT fk_fluidEntries_users FOREIGN KEY (userId) REFERENCES user(id)
     );
 
 
@@ -195,7 +195,7 @@ CREATE TABLE account (
     '2025-01-13',
     1000,
     1030,
-    'Completed drink')
+    'Completed drink');
     
 
     INSERT INTO fluidtracker.fluidentries(patientId,
@@ -212,6 +212,6 @@ CREATE TABLE account (
     '2025-01-13',
     1060,
     null,
-    'In Progress Drink')
+    'In Progress Drink');
     
     

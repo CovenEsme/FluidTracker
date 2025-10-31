@@ -4,7 +4,7 @@ import { useState, useRef } from "react";
 import Card from "@/app/components/Card";
 import BarcodeScanner from "@/app/components/BarcodeScanner";
 
-export default function AddTest() {
+export default function Add() {
   const [barcode, setBarcode] = useState("");
   const [drinkName, setDrinkName] = useState("");
   const [quantity, setQuantity] = useState("");

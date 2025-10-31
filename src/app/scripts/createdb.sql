@@ -60,20 +60,17 @@ CREATE TABLE fluidTargets (
     patientId INT NOT NULL,
     userId INT NOT NULL,
     createdAt DATETIME NOT NULL,
-    effectiveFrom DATETIME NOT NULL,
-    effectiveTo DATETIME NULL,
-    isActive BOOLEAN NOT NULL,
     millilitres INT NOT NULL,
     CONSTRAINT fk_fluidTargets_patients FOREIGN KEY (patientId) REFERENCES patients(patientId),
     CONSTRAINT fk_fluidTargets_users FOREIGN KEY (userId) REFERENCES user(id)
 );
 
 -- Insert test fluid targets
-INSERT INTO fluidTargets (patientId, userId, createdAt, effectiveFrom, effectiveTo, isActive, millilitres)
+INSERT INTO fluidTargets (patientId, userId, createdAt, millilitres)
 VALUES
-    (1, 1, '2025-01-01 00:00:00', '2025-01-01 00:00:00', '2025-03-01 00:00:00', FALSE, 2000),
-    (1, 1, '2025-03-01 00:00:00', '2025-03-01 00:00:00', NULL, TRUE, 2500),
-    (2, 2, '2025-02-01 00:00:00', '2025-02-01 00:00:00', NULL, TRUE, 1800);
+    (1, 1, '2025-01-01 00:00:00', 2000),
+    (1, 1, '2025-03-01 00:00:00', 2500),
+    (2, 2, '2025-02-01 00:00:00', 1800);
 
 -- Create the 'session' table
 CREATE TABLE session (
@@ -132,15 +129,12 @@ INSERT INTO fluidtracker.fluidTargets
     patientId,
     userId,
     createdAt,
-    effectiveFrom,
-    effectiveTo,
-    isActive,
     millilitres
 )
 VALUES
-(1, 1, '2025-01-01 00:00:00', '2025-01-01 00:00:00', '2025-03-01 00:00:00', FALSE, 2000),
-(1, 1, '2025-03-01 00:00:00', '2025-03-01 00:00:00', '2025-10-09 23:59:59', FALSE, 2200),
-(1, 1, '2025-10-10 00:00:00', '2025-10-10 00:00:00', NULL, TRUE, 2500);
+(1, 1, '2025-01-01 00:00:00', 2000),
+(1, 1, '2025-03-01 00:00:00', 2200),
+(1, 1, '2025-10-10 00:00:00', 2500);
 
 CREATE TABLE fluidtracker.fluidentries (
     fluidEntryId INT AUTO_INCREMENT PRIMARY KEY,

@@ -1,5 +1,20 @@
-const FluidTargetForm = ({ currentTarget }) => {
+import FluidTargetForm from "@/app/components/FluidTargetForm";
+import {
+  getCurrentFluidTarget,
+  setNewFluidTarget,
+} from "@/app/lib/db/dbTarget";
+
+const SetTarget = async (user_id, patient_id) => {
+  var result = await getCurrentFluidTarget(3, 3);
+
+  const currentTarget = result.millilitres ?? 2500;
+
   return (
+    // <div>
+    //   <FluidTargetForm
+    //     currentTarget={currentTarget}
+    //   />
+    // </div>
     <div>
       <div>
         <form>
@@ -12,7 +27,9 @@ const FluidTargetForm = ({ currentTarget }) => {
                   id="fluid_target_input"
                   value={currentTarget}
                   step={50}
-                  // onChange={(event) => setTarget(parseInt(event.target.value))}
+                  onChange={(event) =>
+                    setNewFluidTarget(3, 3, parseInt(event.target.value))
+                  }
                 />
                 <label htmlFor="fluid_target_input">Fluid Target: </label>
               </div>
@@ -27,4 +44,4 @@ const FluidTargetForm = ({ currentTarget }) => {
   );
 };
 
-export default FluidTargetForm;
+export default SetTarget;

@@ -1,4 +1,4 @@
-import connection from "../connection";
+import { connection } from "../connection";
 
 const createNewPatient = async (user_id) => {
   const query = `
@@ -21,7 +21,7 @@ const getPatientIdFromUserId = async (user_id) => {
 const getOrCreatePatientId = async (user_id) => {
   var result = await getPatientIdFromUserId(user_id);
 
-//   console.log(`patientIds.length: ${result.length}`);
+  // console.log(`patientIds.length: ${result.length}`);
 
   if (result.length == 0) {
     await createNewPatient(user_id);

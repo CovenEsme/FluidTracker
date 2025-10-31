@@ -59,6 +59,6 @@ const DashboardClient = ({ user_id, patient_id }) => {
       <ExtraMenu />
     </>
   );
-}
+};
 
 export default DashboardClient;

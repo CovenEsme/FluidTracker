@@ -14,7 +14,7 @@ const connection = await mysql.createConnection({
   timezone: "Z", // Important to ensure UTC timezone
 });
 
-const getSession = async() => {
+const getSession = async () => {
   const session = await auth.api.getSession({
     headers: await headers(),
   });
@@ -24,14 +24,14 @@ const getSession = async() => {
   }
 
   return session;
-}
+};
 
-const getSessionAndIds = async() => {
+const getSessionAndIds = async () => {
   const session = await getSession();
   const user_id = session.session.userId;
   const patient_id = await getOrCreatePatientId(user_id);
 
   return (session, user_id, patient_id);
-}
+};
 
 export { connection, getSession, getSessionAndIds };
